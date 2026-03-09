@@ -185,7 +185,7 @@
                 attemp_c.removeClass("border-dark").addClass("border-warning")
             }
 
-            if (attemp > maxAttemp) {
+            if (!allMatch && attemp >= maxAttemp) {
                 success = 0;
                 $("#success").text(success);
             }
@@ -194,7 +194,7 @@
         });
 
         $("#btn-del").on("click", function () {
-            if (allMatch || attemp > maxAttemp) {
+            if (allMatch || attemp >= maxAttemp) {
                 $(".border-info").removeClass("border-info").addClass("border-secondary")
                 $("#boxAttemp1").removeClass("border-secondary").addClass("border-info");
                 $(".inpAttemp").val("")
