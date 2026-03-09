@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Code</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.slim.min.js"
+            integrity="sha256-8DGpv13HIm+5iDNWw1XqxgFB4mj+yOKFNb+tHBZOowc=" crossorigin="anonymous"></script>
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body class="bg-dark text-light">
+<div class="container">
+    <div class="card bg-dark text-light">
+        <div class="card-body">
+            <div class="row row-cols-1" style="min-height: 40svh;">
+                <div id="boxAttemp1" class="col boxAttemp border border-info text-center py-2">
+                    <div class="d-flex justify-content-evenly">
+                        <input readonly disabled id="attemp1a" type="number" max="9" min="0"
+                               class="form-control text-center bg-dark text-light border-dark w-25 fs-1 fw-bold inpAttemp"
+                               aria-label="off">
+                        <input readonly disabled id="attemp1b" type="number" max="9" min="0"
+                               class="form-control text-center bg-dark text-light border-dark w-25 fs-1 fw-bold inpAttemp"
+                               aria-label="off">
+                        <input readonly disabled id="attemp1c" type="number" max="9" min="0"
+                               class="form-control text-center bg-dark text-light border-dark w-25 fs-1 fw-bold inpAttemp"
+                               aria-label="off">
+                    </div>
+                </div>
+                <div id="boxAttemp2" class="col boxAttemp border border-secondary text-center py-2">
+                    <div class="d-flex justify-content-evenly">
+                        <input readonly disabled id="attemp2a" type="number" max="9" min="0"
+                               class="form-control text-center bg-dark text-light border-dark w-25 fs-1 fw-bold inpAttemp"
+                               aria-label="off">
+                        <input readonly disabled id="attemp2b" type="number" max="9" min="0"
+                               class="form-control text-center bg-dark text-light border-dark w-25 fs-1 fw-bold inpAttemp"
+                               aria-label="off">
+                        <input readonly disabled id="attemp2c" type="number" max="9" min="0"
+                               class="form-control text-center bg-dark text-light border-dark w-25 fs-1 fw-bold inpAttemp"
+                               aria-label="off">
+                    </div>
+                </div>
+                <div id="boxAttemp3" class="col boxAttemp border border-secondary text-center py-2">
+                    <div class="d-flex justify-content-evenly">
+                        <input readonly disabled id="attemp3a" type="number" max="9" min="0"
+                               class="form-control text-center bg-dark text-light border-dark w-25 fs-1 fw-bold inpAttemp"
+                               aria-label="off">
+                        <input readonly disabled id="attemp3b" type="number" max="9" min="0"
+                               class="form-control text-center bg-dark text-light border-dark w-25 fs-1 fw-bold inpAttemp"
+                               aria-label="off">
+                        <input readonly disabled id="attemp3c" type="number" max="9" min="0"
+                               class="form-control text-center bg-dark text-light border-dark w-25 fs-1 fw-bold inpAttemp"
+                               aria-label="off">
+                    </div>
+                </div>
+                <div id="boxAttemp4" class="col boxAttemp border border-secondary text-center py-2">
+                    <div class="d-flex justify-content-evenly">
+                        <input readonly disabled id="attemp4a" type="number" max="9" min="0"
+                               class="form-control text-center bg-dark text-light border-dark w-25 fs-1 fw-bold inpAttemp"
+                               aria-label="off">
+                        <input readonly disabled id="attemp4b" type="number" max="9" min="0"
+                               class="form-control text-center bg-dark text-light border-dark w-25 fs-1 fw-bold inpAttemp"
+                               aria-label="off">
+                        <input readonly disabled id="attemp4c" type="number" max="9" min="0"
+                               class="form-control text-center bg-dark text-light border-dark w-25 fs-1 fw-bold inpAttemp"
+                               aria-label="off">
+                    </div>
+                </div>
+                <div id="boxAttemp5" class="col boxAttemp border border-secondary text-center py-2">
+                    <div class="d-flex justify-content-evenly">
+                        <input readonly disabled id="attemp5a" type="number" max="9" min="0"
+                               class="form-control text-center bg-dark text-light border-dark w-25 fs-1 fw-bold inpAttemp"
+                               aria-label="off">
+                        <input readonly disabled id="attemp5b" type="number" max="9" min="0"
+                               class="form-control text-center bg-dark text-light border-dark w-25 fs-1 fw-bold inpAttemp"
+                               aria-label="off">
+                        <input readonly disabled id="attemp5c" type="number" max="9" min="0"
+                               class="form-control text-center bg-dark text-light border-dark w-25 fs-1 fw-bold inpAttemp"
+                               aria-label="off">
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-3 justify-content-center mt-3" style="min-height: 40svh;">
+                <div class="col p-1">
+                    <button class="w-100 h-100 btn btn-secondary btn-num">1</button>
+                </div>
+                <div class="col p-1">
+                    <button class="w-100 h-100 btn btn-secondary btn-num">2</button>
+                </div>
+                <div class="col p-1">
+                    <button class="w-100 h-100 btn btn-secondary btn-num">3</button>
+                </div>
+                <div class="col p-1">
+                    <button class="w-100 h-100 btn btn-secondary btn-num">4</button>
+                </div>
+                <div class="col p-1">
+                    <button class="w-100 h-100 btn btn-secondary btn-num">5</button>
+                </div>
+                <div class="col p-1">
+                    <button class="w-100 h-100 btn btn-secondary btn-num">6</button>
+                </div>
+                <div class="col p-1">
+                    <button class="w-100 h-100 btn btn-secondary btn-num">7</button>
+                </div>
+                <div class="col p-1">
+                    <button class="w-100 h-100 btn btn-secondary btn-num">8</button>
+                </div>
+                <div class="col p-1">
+                    <button class="w-100 h-100 btn btn-secondary btn-num">9</button>
+                </div>
+                <div class="col p-1">
+                    <button class="w-100 h-100 btn btn-success" id="btn-check">Check</button>
+                </div>
+                <div class="col p-1">
+                    <button class="w-100 h-100 btn btn-secondary btn-num">0</button>
+                </div>
+                <div class="col p-1">
+                    <button class="w-100 h-100 btn btn-danger" id="btn-del">Del</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    Success in a row: <span id="success"></span>
+</div>
+<script>
+    $(document).ready(function () {
+        let key = [randInt(), randInt(), randInt()]
+        while (key[0] === key[1] || key[1] === key[2] || key[2] === key[0]) {
+            key = [randInt(), randInt(), randInt()]
+        }
+        let attemp = 1,
+            maxAttemp = $(".boxAttemp").length,
+            focus,
+            allMatch = false,
+            success = 0
+        $('#success').text(success);
+        $(".btn-num").on("click", function () {
+            if (allMatch) return false;
+            buttonNum(attemp, $(this).text());
+        });
+        $("#btn-check").on("click", function () {
+            let attemp_a = $(`#attemp${attemp}a`),
+                attemp_b = $(`#attemp${attemp}b`),
+                attemp_c = $(`#attemp${attemp}c`)
+            if (allMatch || attemp_a.val() === "" || attemp_b.val() === "" || attemp_c.val() === "") {
+                return false;
+            }
+            $(".boxAttemp").removeClass("border-info").addClass("border-secondary")
+            if (parseInt(attemp_a.val()) === key[0] && parseInt(attemp_b.val()) === key[1] && parseInt(attemp_c.val()) === key[2]) {
+                allMatch = true;
+                success += 1;
+                $("#success").text(success);
+            }
+            if (parseInt(attemp_a.val()) === key[0]) {
+                attemp_a.removeClass("border-dark").addClass("border-success");
+            }
+            if (parseInt(attemp_b.val()) === key[1]) {
+                attemp_b.removeClass("border-dark").addClass("border-success")
+            }
+            if (parseInt(attemp_c.val()) === key[2]) {
+                attemp_c.removeClass("border-dark").addClass("border-success")
+            }
+
+            if (parseInt(attemp_a.val()) === key[1] || parseInt(attemp_a.val()) === key[2]) {
+                attemp_a.removeClass("border-dark").addClass("border-warning")
+            }
+            if (parseInt(attemp_b.val()) === key[2] || parseInt(attemp_b.val()) === key[0]) {
+                attemp_b.removeClass("border-dark").addClass("border-warning")
+            }
+            if (parseInt(attemp_c.val()) === key[1] || parseInt(attemp_c.val()) === key[0]) {
+                attemp_c.removeClass("border-dark").addClass("border-warning")
+            }
+
+            if (attemp > maxAttemp) {
+                success = 0;
+                $("#success").text(success);
+            }
+            $(`#boxAttemp${attemp}`).removeClass("border-secondary").addClass("border-info")
+            attemp += 1
+        });
+
+        $("#btn-del").on("click", function () {
+            if (allMatch || attemp > maxAttemp) {
+                $(".border-info").removeClass("border-info").addClass("border-secondary")
+                $("#boxAttemp1").removeClass("border-secondary").addClass("border-info");
+                $(".inpAttemp").val("")
+                    .removeClass("border-warning").removeClass("border-success").addClass("border-dark")
+                reset();
+            } else {
+                if (focus) {
+                    $(`#attemp${attemp}${focus}`).focus().val("");
+                    switch (focus) {
+                        case "b":
+                            focus = "a"
+                            break;
+                        case "c":
+                            focus = "b"
+                            break;
+                        default:
+                            focus = "a"
+                            break;
+                    }
+                }
+            }
+        });
+
+        function randInt() {
+            return Math.floor(Math.random() * 10);
+        }
+
+        function buttonNum(attemp, text) {
+            let attemp_a = $(`#attemp${attemp}a`),
+                attemp_b = $(`#attemp${attemp}b`),
+                attemp_c = $(`#attemp${attemp}c`)
+            switch (true) {
+                case attemp_a.val() === "":
+                    attemp_a.focus();
+                    attemp_a.val(text);
+                    focus = "a"
+                    break;
+                case attemp_b.val() === "":
+                    attemp_b.focus();
+                    attemp_b.val(text);
+                    focus = "b"
+                    break;
+                case attemp_c.val() === "":
+                    attemp_c.focus();
+                    attemp_c.val(text);
+                    focus = "c"
+                    break;
+            }
+        }
+
+        function reset() {
+            allMatch = false
+            attemp = 1
+            focus = null
+            key = [randInt(), randInt(), randInt()]
+            while (key[0] === key[1] || key[1] === key[2] || key[2] === key[0]) {
+                key = [randInt(), randInt(), randInt()]
+            }
+        }
+    });
+</script>
+</body>
+</html>
