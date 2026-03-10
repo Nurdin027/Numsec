@@ -142,6 +142,7 @@
         while (key[0] === key[1] || key[1] === key[2] || key[2] === key[0]) {
             key = [randInt(), randInt(), randInt()]
         }
+
         let attemp = 1,
             maxAttemp = $(".boxAttemp").length,
             focus,
@@ -153,44 +154,52 @@
             buttonNum(attemp, $(this).text());
         });
         $("#btn-check").on("click", function () {
-            let attemp_a = $(`#attemp${attemp}a`),
-                attemp_b = $(`#attemp${attemp}b`),
-                attemp_c = $(`#attemp${attemp}c`)
-            if (allMatch || attemp_a.val() === "" || attemp_b.val() === "" || attemp_c.val() === "") {
-                return false;
-            }
-            $(".boxAttemp").removeClass("border-info").addClass("border-secondary")
-            if (parseInt(attemp_a.val()) === key[0] && parseInt(attemp_b.val()) === key[1] && parseInt(attemp_c.val()) === key[2]) {
-                allMatch = true;
-                success += 1;
-                $("#success").text(success);
-            }
-            if (parseInt(attemp_a.val()) === key[0]) {
-                attemp_a.removeClass("border-dark").addClass("border-success");
-            }
-            if (parseInt(attemp_b.val()) === key[1]) {
-                attemp_b.removeClass("border-dark").addClass("border-success")
-            }
-            if (parseInt(attemp_c.val()) === key[2]) {
-                attemp_c.removeClass("border-dark").addClass("border-success")
-            }
+            if (allMatch || attemp > maxAttemp) {
+                $(".border-info").removeClass("border-info").addClass("border-secondary")
+                $("#boxAttemp1").removeClass("border-secondary").addClass("border-info");
+                $(".inpAttemp").val("")
+                    .removeClass("border-warning").removeClass("border-success").addClass("border-dark")
+                reset();
+            } else {
+                let attemp_a = $(`#attemp${attemp}a`),
+                    attemp_b = $(`#attemp${attemp}b`),
+                    attemp_c = $(`#attemp${attemp}c`)
+                if (allMatch || attemp_a.val() === "" || attemp_b.val() === "" || attemp_c.val() === "") {
+                    return false;
+                }
+                $(".boxAttemp").removeClass("border-info").addClass("border-secondary")
+                if (parseInt(attemp_a.val()) === key[0] && parseInt(attemp_b.val()) === key[1] && parseInt(attemp_c.val()) === key[2]) {
+                    allMatch = true;
+                    success += 1;
+                    $("#success").text(success);
+                }
+                if (parseInt(attemp_a.val()) === key[0]) {
+                    attemp_a.removeClass("border-dark").addClass("border-success");
+                }
+                if (parseInt(attemp_b.val()) === key[1]) {
+                    attemp_b.removeClass("border-dark").addClass("border-success")
+                }
+                if (parseInt(attemp_c.val()) === key[2]) {
+                    attemp_c.removeClass("border-dark").addClass("border-success")
+                }
 
-            if (parseInt(attemp_a.val()) === key[1] || parseInt(attemp_a.val()) === key[2]) {
-                attemp_a.removeClass("border-dark").addClass("border-warning")
-            }
-            if (parseInt(attemp_b.val()) === key[2] || parseInt(attemp_b.val()) === key[0]) {
-                attemp_b.removeClass("border-dark").addClass("border-warning")
-            }
-            if (parseInt(attemp_c.val()) === key[1] || parseInt(attemp_c.val()) === key[0]) {
-                attemp_c.removeClass("border-dark").addClass("border-warning")
-            }
+                if (parseInt(attemp_a.val()) === key[1] || parseInt(attemp_a.val()) === key[2]) {
+                    attemp_a.removeClass("border-dark").addClass("border-warning")
+                }
+                if (parseInt(attemp_b.val()) === key[2] || parseInt(attemp_b.val()) === key[0]) {
+                    attemp_b.removeClass("border-dark").addClass("border-warning")
+                }
+                if (parseInt(attemp_c.val()) === key[1] || parseInt(attemp_c.val()) === key[0]) {
+                    attemp_c.removeClass("border-dark").addClass("border-warning")
+                }
 
-            if (!allMatch && attemp >= maxAttemp) {
-                success = 0;
-                $("#success").text(success);
+                if (!allMatch && attemp >= maxAttemp) {
+                    success = 0;
+                    $("#success").text(success);
+                }
+                attemp += 1
+                $(`#boxAttemp${attemp}`).removeClass("border-secondary").addClass("border-info")
             }
-            attemp += 1
-            $(`#boxAttemp${attemp}`).removeClass("border-secondary").addClass("border-info")
         });
 
         $("#btn-del").on("click", function () {
@@ -217,6 +226,35 @@
                 }
             }
         });
+
+        $(window).on("keydown", function (e) {
+            if (e.keyCode >= 48 && e.keyCode <= 57) {
+                if (allMatch) return false;
+                buttonNum(attemp, e.key);
+            } else {
+                switch (e.keyCode) {
+                    case 8:
+                        $("#btn-del").click();
+                        break;
+                    case 13:
+                        $("#btn-check").click();
+                        break;
+                }
+            }
+        });
+
+        //firstHint();
+
+        function firstHint() {
+            let hint = [randInt(), randInt(), randInt()]
+            while (hint[0] === hint[1] || hint[1] === hint[2] || hint[2] === hint[0]) {
+                hint = [randInt(), randInt(), randInt()]
+            }
+            $("#attemp1a").val(hint[0]);
+            $("#attemp1b").val(hint[1]);
+            $("#attemp1c").val(hint[2]);
+            $('#btn-check').click();
+        }
 
         function randInt() {
             return Math.floor(Math.random() * 10);
@@ -253,6 +291,7 @@
             while (key[0] === key[1] || key[1] === key[2] || key[2] === key[0]) {
                 key = [randInt(), randInt(), randInt()]
             }
+            //firstHint();
         }
     });
 </script>
